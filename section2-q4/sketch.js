@@ -15,7 +15,7 @@ function setup() {
     if(i % 2 === 1){
       fill(255)
     }
-    rect(0, i * d, width, (i + 1) * d)
+    rect(0, i * d, width, (i + 1) * d)//高さdでもいいんじゃ？
   }
 
   fill(blue);
