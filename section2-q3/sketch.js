@@ -10,26 +10,66 @@ function setup() {
   stroke(255);
   strokeWeight(3);
 
-  const cx = width / 2; // 中心は (cx, cy)
-  const cy = height / 2;
-  const maxR = min(width, height); // 大きさは幅と高さのうち小さい方
-
-  drawCircle(black, maxR);
-  drawArcs(green, red, maxR * 0.8);
+  let cx = width/2; // 中心は (cx, cy)
+  let cy = height/2;
+  let maxR = min(width, height); // 大きさは幅と高さのうち小さい方
+  
+  fill(0);
+  ellipse(cx,cy,maxR)
+  
+  //drawArcs(green, red, maxR * 0.8);
   // BLANK[1] (hint: drawArcs x 3, drawCircle x 1)
-  drawCircle(red, maxR * 0.05);
-}
-
-function drawCircle(c, r){
-  fill(c);
-  ellipse(cx, cy, r, r);
-}
-
-function drawArcs(c1, c2, r) {
-  for (let i = 0; i < 20; i++) {
-    let start = TWO_PI / 20 * i;
-    let stop = TWO_PI / 20 * (i + 1);
-    fill(i % 2 == 0 ? c1 : c2);
-    arc(cx, cy, r, r, start, stop, PIE);
+  for(let i = 0; i<20; i++){
+    let start = TWO_PI / 20 *i;
+    let stop = TWO_PI / 20 * (i+1);
+    if (i % 2 == 0){
+      fill(0,255,0)
+    }
+    if (i % 2 == 1){
+      fill(255,0,0)
+    }
+  arc(cx, cy, maxR*0.8, maxR*0.8, start, stop, PIE);
   }
+
+  for(let i = 0; i<20; i++){
+    let start = TWO_PI / 20 *i;
+    let stop = TWO_PI / 20 * (i+1);
+    if (i % 2 == 0){
+      fill(242, 212, 147)
+    }
+    if (i % 2 == 1){
+      fill(0)
+    }
+  arc(cx, cy, maxR*0.75, maxR*0.75, start, stop, PIE);
+  }
+
+  for(let i = 0; i<20; i++){
+    let start = TWO_PI / 20 *i;
+    let stop = TWO_PI / 20 * (i+1);
+    if (i % 2 == 0){
+      fill(0,255,0)
+    }
+    if (i % 2 == 1){
+      fill(255,0,0)
+    }
+  arc(cx, cy, maxR*0.5, maxR*0.5, start, stop, PIE);
+  }
+
+  for(let i = 0; i<20; i++){
+    let start = TWO_PI / 20 *i;
+    let stop = TWO_PI / 20 * (i+1);
+    if (i % 2 == 0){
+      fill(242, 212, 147)
+    }
+    if (i % 2 == 1){
+      fill(0)
+    }
+  arc(cx, cy, maxR*0.45, maxR*0.45, start, stop, PIE);
+  }
+
+  fill(0, 255, 0);
+  ellipse(cx,cy,maxR*0.1)
+
+  fill(255, 0, 0);
+  ellipse(cx,cy,maxR*0.05)
 }
